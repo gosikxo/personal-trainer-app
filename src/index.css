@@ -1,19 +1,58 @@
 :root {
   --brown: #62554a;
-  --cream: #b89b86; 
+  --cream: #dabfac;
   --dark-brown: #3b3835;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Noto Sans Tagbanwa', sans-serif;
+  color: var(--dark-brown)
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  text-align: center;
+  margin: 60px;
+  font-family: 'Gloock', serif;
+}
+
+h2 {
+  font-family: 'Gloock', serif;
+  text-align: center;
+  padding: 10px;
+}
+
+.container {
+  background-color: var(--cream);
+  width: 80%;
+  margin: auto;
+}
+
+.checkboxes {
+  margin: 0 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.upperBody {
+  flex-direction: column;
+  display: flex;
+}
+
+.lowerBody {
+  flex-direction: column;
+  display: flex;
+}
+
+.upperAndLowerBody {
+  font-family: 'Gloock', serif;
+}
+
+.checkboxes label {
+  text-align: right;
+}
+
+.checkboxes input {
+  margin-right: 7px;
 }
