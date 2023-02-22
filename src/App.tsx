@@ -6,7 +6,6 @@ async function fetchExcersises() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "fc93ca8128msh1bb27fbaebf2010p199242jsne15137eb2e7d",
       "X-RapidAPI-Host": "exercises-by-api-ninjas.p.rapidapi.com"
     }
   };
