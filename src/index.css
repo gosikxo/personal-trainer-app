@@ -32,7 +32,8 @@ h2 {
   margin: 0 50px;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  font-size: 20px;
 }
 
 .upperBody {
@@ -51,8 +52,10 @@ h2 {
 
 .checkboxes label {
   text-align: right;
+  margin-bottom: 15px;
 }
 
 .checkboxes input {
   margin-right: 7px;
+  margin-bottom: 15px;
 }
