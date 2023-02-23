@@ -1,11 +1,15 @@
 import React from 'react'
-import { Exercise } from './Exercise'
+import { Excercise } from '../types'
 
-const Workout = (exercises: []) => {
+const Workout = ({ exercises }: { exercises: Array<Excercise> }) => {
   return (
     <div className='workout'>
       <h2>Workout</h2>
-      <Exercise exercises={exercises}/>
+      {exercises.map((exercise: Excercise) => (
+        <div>
+          {exercise.name}
+        </div>
+      ))}
     </div>
   )
 }
