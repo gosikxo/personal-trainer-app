@@ -28,12 +28,6 @@ export const Parameters = () => {
                     <div><input type='checkbox' id="lats" name="lats" />
                         <label>lats</label>
                     </div>
-                    <div><input type='checkbox' id="lowerback" name="lowerback" />
-                        <label>lowerback</label>
-                    </div>
-                    <div><input type='checkbox' id="middleback" name="middleback" />
-                        <label>middleback</label>
-                    </div>
                     <div><input type='checkbox' id="neck" name="neck" />
                         <label>neck</label>
                     </div>
