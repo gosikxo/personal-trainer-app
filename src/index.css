@@ -20,6 +20,7 @@ h2 {
   font-family: 'Gloock', serif;
   text-align: center;
   padding: 10px;
+  font-size: 30px;
 }
 
 .container {
@@ -58,4 +59,15 @@ h2 {
 .checkboxes input {
   margin-right: 7px;
   margin-bottom: 15px;
+}
+
+.workout {
+  background-color: var(--cream);
+  width: 80%;
+  margin: auto;
+}
+
+.workout ul {
+  font-size: 20px;
+  list-style-type: circle;
 }

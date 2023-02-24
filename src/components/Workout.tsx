@@ -5,11 +5,13 @@ const Workout = ({ exercises }: { exercises: Array<Excercise> }) => {
   return (
     <div className='workout'>
       <h2>Workout</h2>
-      {exercises.map((exercise: Excercise) => (
-        <div>
-          {exercise.name}
-        </div>
-      ))}
+      <ul>
+        {exercises.map((exercise: Excercise) => (
+          <li>
+            {exercise.name}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
