@@ -65,9 +65,9 @@ h2 {
   background-color: var(--cream);
   width: 80%;
   margin: auto;
+  padding-bottom: 20px;
 }
 
-.workout ul {
+.workout ol {
   font-size: 20px;
-  list-style-type: circle;
 }

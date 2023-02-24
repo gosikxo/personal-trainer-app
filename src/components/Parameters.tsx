@@ -1,40 +1,54 @@
 import React from 'react'
 
-export const Parameters = () => {
+interface Props {
+    handleClick: (exerciseClicked: string) => void,
+}
+
+export const Parameters = ({ handleClick }: Props) => {
     return (
         <div className='parameters'>
             <h2>Choose muscle groups</h2>
             <div className='checkboxes'>
                 <div className='upperBody'>
                     <div>
-                        <div className='upperAndLowerBody'> 
+                        <div className='upperAndLowerBody'>
                             <input type='checkbox' id="upper body" name="upper body" />
                             <label>upper body</label>
                         </div>
                     </div>
                     <br></br>
-                    <div><input type='checkbox' id="abdominals" name="abdominals" />
+                    <div>
+                        <input type='checkbox' id="abdominals" name="abdominals" onClick={() => {
+                            handleClick("abdominals")
+                        }} />
                         <label>abdominals</label>
                     </div>
-                    <div><input type='checkbox' id="biceps" name="biceps" />
+                    <div>
+                        <input type='checkbox' id="biceps" name="biceps" />
                         <label>biceps</label>
                     </div>
-                    <div><input type='checkbox' id="chest" name="chest" />
+                    <div>
+                        <input type='checkbox' id="chest" name="chest" />
                         <label>chest</label>
                     </div>
-                    <div><input type='checkbox' id="forearms" name="forearms" />
+                    <div>
+                        <input type='checkbox' id="forearms" name="forearms" />
                         <label>forearms</label>
                     </div>
-                    <div><input type='checkbox' id="lats" name="lats" />
+                    <div>
+                        <input type='checkbox' id="lats" name="lats" />
                         <label>lats</label>
                     </div>
-                    <div><input type='checkbox' id="neck" name="neck" />
+                    <div>
+                        <input type='checkbox' id="neck" name="neck" />
                         <label>neck</label>
                     </div>
-                    <div><input type='checkbox' id="traps" name="traps" />
+                    <div>
+                        <input type='checkbox' id="traps" name="traps" />
                         <label>traps</label>
                     </div>
-                    <div><input type='checkbox' id="triceps" name="triceps" />
+                    <div>
+                        <input type='checkbox' id="triceps" name="triceps" />
                         <label>triceps</label>
                     </div>
                 </div>

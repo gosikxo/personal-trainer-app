@@ -5,13 +5,13 @@ const Workout = ({ exercises }: { exercises: Array<Excercise> }) => {
   return (
     <div className='workout'>
       <h2>Workout</h2>
-      <ul>
+      <ol>
         {exercises.map((exercise: Excercise) => (
           <li>
             {exercise.name}
           </li>
         ))}
-      </ul>
+      </ol>
     </div>
   )
 }

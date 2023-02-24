@@ -17,9 +17,15 @@ function App() {
     }
   }
 
+  const handleClick = (exerciseClicked: string): void => {
+    setExcersises(exercises.filter((exercise) => {
+      return exercise.muscle === exerciseClicked
+    }))
+  }
+
   useEffect(() => {
     fetchData()
-  },[])
+  }, [])
 
   return (
     <div className="App">
@@ -27,7 +33,7 @@ function App() {
         Meet your new personal trainer.
       </h1>
       <div className="container">
-        <Parameters />
+        <Parameters handleClick={handleClick}/>
         <Workout exercises={exercises} />
       </div>
     </div>
