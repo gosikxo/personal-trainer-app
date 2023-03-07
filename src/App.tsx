@@ -1,12 +1,13 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
 import { Parameters } from "./components/Parameters";
 import Workout from "./components/Workout";
 import { Excercise } from "./types";
 import { useEffect } from "react";
+import uniq from "lodash/uniq"
 
 function App() {
   const [exercises, setExercises] = useState<Array<Excercise>>([])
-  const [exercise, setExercise] = useState("")
+  const [chosenMuscleTypes, setChosenMuscleTypes] = useState<Record<string, boolean>>({});
 
   const fetchData = async () => {
     try {
@@ -19,19 +20,16 @@ function App() {
   }
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    if (event.target.checked) {
-      setExercise(event.target.id)
-      setExercises(exercises.filter((exercise) => {
-        return exercise.muscle === event.target.id
-      }))
-    } else {
-      setExercises(exercises)
-    }
+    setChosenMuscleTypes(previousValue => ({ ...previousValue, [event.target.id]: event.target.checked }))
   }
+
+  console.log(chosenMuscleTypes)
 
   useEffect(() => {
     fetchData()
   }, [])
+
+  const muscleTypes = useMemo(() => uniq(exercises.map(exercise => exercise.muscle)), [exercises])
 
   return (
     <div className="App">
@@ -39,8 +37,8 @@ function App() {
         Meet your new personal trainer.
       </h1>
       <div className="container">
-        <Parameters handleChange={handleChange} />
-        <Workout exercises={exercises} />
+        <Parameters handleChange={handleChange} muscleTypes={muscleTypes} chosenMuscleTypes={chosenMuscleTypes} />
+        <Workout exercises={exercises.filter(exercise => chosenMuscleTypes[exercise.muscle])} />
       </div>
     </div>
   );

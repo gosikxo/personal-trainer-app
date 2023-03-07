@@ -8,7 +8,7 @@ const Workout = ({ exercises }: { exercises: Array<Excercise> }) => {
       <ol>
         {exercises.map((exercise: Excercise) => (
           <li>
-            {exercise.name}
+            {exercise.name} ({exercise.muscle})
           </li>
         ))}
       </ol>
