@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 
 interface Props {
-    handleClick: (exerciseClicked: string) => void,
+    handleChange: (event: ChangeEvent<HTMLInputElement>) => void,
 }
 
-export const Parameters = ({ handleClick }: Props) => {
+export const Parameters = ({ handleChange }: Props) => {
     return (
         <div className='parameters'>
             <h2>Choose muscle groups</h2>
@@ -18,9 +18,9 @@ export const Parameters = ({ handleClick }: Props) => {
                     </div>
                     <br></br>
                     <div>
-                        <input type='checkbox' id="abdominals" name="abdominals" onClick={() => {
-                            handleClick("abdominals")
-                        }} />
+                        <input type='checkbox' id="abdominals" name="abdominals" onChange={
+                            handleChange
+                        } />
                         <label>abdominals</label>
                     </div>
                     <div>
