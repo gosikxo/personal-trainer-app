@@ -8,6 +8,7 @@ import uniq from "lodash/uniq"
 function App() {
   const [exercises, setExercises] = useState<Array<Excercise>>([])
   const [chosenMuscleTypes, setChosenMuscleTypes] = useState<Record<string, boolean>>({});
+  const [clicked, setClicked] = useState(false)
 
   const fetchData = async () => {
     try {
@@ -23,13 +24,15 @@ function App() {
     setChosenMuscleTypes(previousValue => ({ ...previousValue, [event.target.id]: event.target.checked }))
   }
 
-  console.log(chosenMuscleTypes)
-
   useEffect(() => {
     fetchData()
   }, [])
 
   const muscleTypes = useMemo(() => uniq(exercises.map(exercise => exercise.muscle)), [exercises])
+
+  const toggleInstructions = () => {
+    setClicked(!clicked)
+  }
 
   return (
     <div className="App">
@@ -38,7 +41,7 @@ function App() {
       </h1>
       <div className="container">
         <Parameters handleChange={handleChange} muscleTypes={muscleTypes} chosenMuscleTypes={chosenMuscleTypes} />
-        <Workout exercises={exercises.filter(exercise => chosenMuscleTypes[exercise.muscle])} />
+        <Workout exercises={exercises.filter(exercise => chosenMuscleTypes[exercise.muscle])} toggleInstructions={toggleInstructions} clicked={clicked}/>
       </div>
     </div>
   );
