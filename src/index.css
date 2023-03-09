@@ -65,3 +65,7 @@ h2 {
 .visibleInstructions {
   display: block;
 }
+
+.exercise {
+  cursor: pointer;
+}
