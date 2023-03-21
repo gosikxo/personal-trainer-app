@@ -40,6 +40,7 @@ h2 {
 .checkboxes label {
   text-align: right;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .checkboxes input {
