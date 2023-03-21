@@ -32,7 +32,6 @@ function App() {
   const muscleTypes = useMemo(() => uniq(exercises.map(exercise => exercise.muscle)), [exercises])
 
   const toggleInstructions = (name: string) => {
-    console.log(chosenExercise)
     setChosenExercise(name)
   }
 
@@ -43,7 +42,7 @@ function App() {
       </h1>
       <div className="container">
         <Parameters handleChange={handleChange} muscleTypes={muscleTypes} chosenMuscleTypes={chosenMuscleTypes} />
-        <Workout exercises={exercises.filter(exercise => chosenMuscleTypes[exercise.muscle])} toggleInstructions={toggleInstructions} chosenExercise={chosenExercise}/>
+        <Workout exercises={exercises.filter(exercise => chosenMuscleTypes[exercise.muscle])} toggleInstructions={toggleInstructions} chosenExercise={chosenExercise} />
       </div>
     </div>
   );

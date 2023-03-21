@@ -9,7 +9,7 @@ const Workout = ({ exercises, toggleInstructions, chosenExercise }: { exercises:
         {exercises.map((exercise: Excercise) => (
           <li onClick={() => toggleInstructions(exercise.name)} className='exercise'>
             {exercise.name} ({exercise.muscle})
-            <p className={chosenExercise ? "visibleInstructions":"instructions"}>{exercise.instructions}</p>
+            <p className={chosenExercise === exercise.name ? "visibleInstructions":"instructions"}>{exercise.instructions}</p>
           </li>
         ))}
       </ol>
