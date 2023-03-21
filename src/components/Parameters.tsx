@@ -12,9 +12,9 @@ export const Parameters = ({ handleChange, muscleTypes, chosenMuscleTypes }: Pro
             <h2>Choose muscle groups</h2>
             <div className='checkboxes'>
                     {muscleTypes.map((muscleType: string) => {
-                        return <div>
+                        return <div className='checkbox'>
                             <input type='checkbox' checked={chosenMuscleTypes[muscleType]} id={muscleType} name={muscleType} onChange={handleChange}></input>
-                            <label>{muscleType}</label>
+                            <label htmlFor="muscleType">{muscleType}</label>
                         </div>
                     })}
             </div >

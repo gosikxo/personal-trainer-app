@@ -45,6 +45,11 @@ h2 {
 .checkboxes input {
   margin-right: 7px;
   margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 20%;
 }
 
 .workout {
