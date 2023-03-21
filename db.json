@@ -121,46 +121,6 @@
             "instructions": "Position a band around your lower legs. The resistance can be applied closer to the knees for an easier movement or around the ankles or feet for a more advanced movement. With the band in place, assume an athletic standing position, with the knees and hips slightly bent, feet shoulder-width apart, and the head and chest up. This will be your starting position. Staying low, take a slow, lateral step. Keep your toes pointed forward and stay low. After completing the step, follow with the opposite leg. Step slowly, resisting the band. Keep the feet at least shoulder width apart to maintain band tension. Continue to laterally step in this manner to complete the set for the desired number of repetitions before switching to walk in the opposite direction."
         },
         {
-            "name": "Dynamic pigeon stretch",
-            "type": "strength",
-            "muscle": "abductors",
-            "equipment": "body_only",
-            "difficulty": "intermediate",
-            "instructions": ""
-        },
-        {
-            "name": "Cross-over jack",
-            "type": "strength",
-            "muscle": "abductors",
-            "equipment": "body_only",
-            "difficulty": "intermediate",
-            "instructions": ""
-        },
-        {
-            "name": "Traveling thigh killa",
-            "type": "strength",
-            "muscle": "abductors",
-            "equipment": "body_only",
-            "difficulty": "intermediate",
-            "instructions": ""
-        },
-        {
-            "name": "FYR Thigh Killa",
-            "type": "strength",
-            "muscle": "abductors",
-            "equipment": "body_only",
-            "difficulty": "intermediate",
-            "instructions": ""
-        },
-        {
-            "name": "HM Frog Stretch",
-            "type": "strength",
-            "muscle": "abductors",
-            "equipment": "body_only",
-            "difficulty": "intermediate",
-            "instructions": ""
-        },
-        {
             "name": "Thigh adductor",
             "type": "strength",
             "muscle": "adductors",
@@ -175,38 +135,6 @@
             "equipment": "bands",
             "difficulty": "beginner",
             "instructions": "Anchor a band around a solid post or other object. Stand with your left side to the post, and put your right foot through the band, getting it around the ankle. Stand up straight and hold onto the post if needed. This will be your starting position. Keeping the knee straight, raise your right legs out to the side as far as you can. Return to the starting position and repeat for the desired rep count. Switch sides."
-        },
-        {
-            "name": "Side-To-Side Adductor Stretch",
-            "type": "strength",
-            "muscle": "adductors",
-            "equipment": "body_only",
-            "difficulty": "intermediate",
-            "instructions": ""
-        },
-        {
-            "name": "HM Left Leg Swing",
-            "type": "strength",
-            "muscle": "adductors",
-            "equipment": "body_only",
-            "difficulty": "intermediate",
-            "instructions": ""
-        },
-        {
-            "name": "UNS Foam Roll Adductor",
-            "type": "strength",
-            "muscle": "adductors",
-            "equipment": "body_only",
-            "difficulty": "intermediate",
-            "instructions": ""
-        },
-        {
-            "name": "Side-lying leg adduction scissor",
-            "type": "strength",
-            "muscle": "adductors",
-            "equipment": "body_only",
-            "difficulty": "intermediate",
-            "instructions": ""
         },
         {
             "name": "Incline Hammer Curls",

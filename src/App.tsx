@@ -8,8 +8,7 @@ import uniq from "lodash/uniq"
 function App() {
   const [exercises, setExercises] = useState<Array<Excercise>>([])
   const [chosenMuscleTypes, setChosenMuscleTypes] = useState<Record<string, boolean>>({})
-  const [clicked, setClicked] = useState(false)
-  const [chosenExercise, setChosenExercise] = useState<Record<string, boolean>>({})
+  const [chosenExercise, setChosenExercise] = useState('')
 
 
   const fetchData = async () => {
@@ -32,9 +31,9 @@ function App() {
 
   const muscleTypes = useMemo(() => uniq(exercises.map(exercise => exercise.muscle)), [exercises])
 
-  const toggleInstructions = (event: React.MouseEvent<HTMLElement>) => {
-    setClicked(!clicked)
-    setChosenExercise(previousValue => ({ ...previousValue, [event.target.id]: event.target}))
+  const toggleInstructions = (name: string) => {
+    console.log(chosenExercise)
+    setChosenExercise(name)
   }
 
   return (
@@ -44,7 +43,7 @@ function App() {
       </h1>
       <div className="container">
         <Parameters handleChange={handleChange} muscleTypes={muscleTypes} chosenMuscleTypes={chosenMuscleTypes} />
-        <Workout exercises={exercises.filter(exercise => chosenMuscleTypes[exercise.muscle])} toggleInstructions={toggleInstructions} clicked={clicked}/>
+        <Workout exercises={exercises.filter(exercise => chosenMuscleTypes[exercise.muscle])} toggleInstructions={toggleInstructions} chosenExercise={chosenExercise}/>
       </div>
     </div>
   );

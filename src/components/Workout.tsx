@@ -1,15 +1,15 @@
 import React from 'react'
 import { Excercise } from '../types'
 
-const Workout = ({ exercises, toggleInstructions, clicked }: { exercises: Array<Excercise>, toggleInstructions: (event: React.MouseEvent<HTMLElement>) => void, clicked: boolean }) => {
+const Workout = ({ exercises, toggleInstructions, chosenExercise }: { exercises: Array<Excercise>, toggleInstructions: (name: string) => void, chosenExercise: string }) => {
   return (
     <div className='workout'>
       <h2>Workout</h2>
       <ol>
         {exercises.map((exercise: Excercise) => (
-          <li onClick={toggleInstructions} className='exercise'>
+          <li onClick={() => toggleInstructions(exercise.name)} className='exercise'>
             {exercise.name} ({exercise.muscle})
-            <p className={clicked? "visibleInstructions":"instructions"}>{exercise.instructions}</p>
+            <p className={chosenExercise ? "visibleInstructions":"instructions"}>{exercise.instructions}</p>
           </li>
         ))}
       </ol>
