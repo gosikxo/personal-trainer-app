@@ -9,7 +9,7 @@ function App() {
   const [exercises, setExercises] = useState<Array<Excercise>>([])
   const [chosenMuscleTypes, setChosenMuscleTypes] = useState<Record<string, boolean>>({})
   const [chosenExercise, setChosenExercise] = useState('')
-
+  const [clicked, setClicked] = useState(false)
 
   const fetchData = async () => {
     try {
@@ -33,6 +33,11 @@ function App() {
 
   const toggleInstructions = (name: string) => {
     setChosenExercise(name)
+    if (clicked && chosenExercise === name) {
+      setClicked(false)
+    } else {
+      setClicked(true)
+    }
   }
 
   return (
@@ -41,8 +46,15 @@ function App() {
         Meet your new personal trainer.
       </h1>
       <div className="container">
-        <Parameters handleChange={handleChange} muscleTypes={muscleTypes} chosenMuscleTypes={chosenMuscleTypes} />
-        <Workout exercises={exercises.filter(exercise => chosenMuscleTypes[exercise.muscle])} toggleInstructions={toggleInstructions} chosenExercise={chosenExercise} />
+        <Parameters
+          handleChange={handleChange}
+          muscleTypes={muscleTypes}
+          chosenMuscleTypes={chosenMuscleTypes} />
+        <Workout
+          exercises={exercises.filter(exercise => chosenMuscleTypes[exercise.muscle])}
+          toggleInstructions={toggleInstructions}
+          chosenExercise={chosenExercise}
+          clicked={clicked} />
       </div>
     </div>
   );
