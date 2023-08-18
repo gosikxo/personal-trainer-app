@@ -1,23 +1,43 @@
-import React, { ChangeEvent } from 'react'
 
 interface Props {
-    handleChange: (event: ChangeEvent<HTMLInputElement>) => void,
-    muscleTypes: Array<string>
-    chosenMuscleTypes: Record<string, boolean>
+  handleChange: (checked: boolean, muscleType: string) => void
+  muscleTypes: Array<string>
+  chosenMuscleTypes: Record<string, boolean>
+  toggleAll: () => void
+  isChosenAll: boolean
 }
 
-export const Parameters = ({ handleChange, muscleTypes, chosenMuscleTypes }: Props) => {
-    return (
-        <div className='parameters'>
-            <h2>Choose muscle groups</h2>
-            <div className='checkboxes'>
-                    {muscleTypes.map((muscleType: string) => {
-                        return <div className='checkbox'>
-                            <input type='checkbox' checked={chosenMuscleTypes[muscleType]} id={muscleType} name={muscleType} onChange={handleChange}></input>
-                            <label htmlFor={muscleType}>{muscleType}</label>
-                        </div>
-                    })}
-            </div >
-        </div>
-    )
+export const Parameters = ({
+  handleChange,
+  muscleTypes,
+  chosenMuscleTypes,
+  toggleAll,
+  isChosenAll,
+}: Props) => {
+  return (
+    <div className="parameters">
+      <h2>Choose muscle groups</h2>{" "}
+      <button style={{ width: 150 }} onClick={toggleAll}>
+        {isChosenAll ? "Deselect all" : "Select all"}
+      </button>
+      <div className="checkboxes">
+        {muscleTypes.map((muscleType: string) => {
+          return (
+            <div className="checkbox">
+              <label>
+                <input
+                  type="checkbox"
+                  style={{ verticalAlign: "middle" }}
+                  checked={chosenMuscleTypes[muscleType] ?? false}
+                  name={muscleType}
+                  onChange={(e) => handleChange(e.target.checked, muscleType)}
+                />
+                {muscleType}
+              </label>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
 }

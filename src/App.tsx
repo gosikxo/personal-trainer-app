@@ -1,4 +1,4 @@
-import { ChangeEvent, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Parameters } from "./components/Parameters";
 import Workout from "./components/Workout";
 import { Excercise } from "./types";
@@ -13,16 +13,17 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:8000/excercises')
-      const json = await response.json()
-      setExercises(json)
+      const response = await fetch('/.netlify/functions/get-exercises')
+      const {exercises} = await response.json()
+
+      setExercises(exercises)
     } catch (err) {
       console.log(err)
     }
   }
-
-  function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    setChosenMuscleTypes(previousValue => ({ ...previousValue, [event.target.id]: event.target.checked }))
+  
+  function handleChange(checked:boolean, muscleType: string) {
+    setChosenMuscleTypes(previousValue => ({ ...previousValue, [muscleType]: checked }))
   }
 
   useEffect(() => {
@@ -40,6 +41,8 @@ function App() {
     }
   }
 
+  const chosenAll = useMemo(() => muscleTypes.length === Object.values(chosenMuscleTypes).filter(Boolean).length, [muscleTypes, chosenMuscleTypes]);
+
   return (
     <div className="App">
       <h1>
@@ -47,10 +50,23 @@ function App() {
       </h1>
       <div className="container">
         <Parameters
+        toggleAll={() => {
+            if (chosenAll) {
+              setChosenMuscleTypes({})
+            } else { 
+              setChosenMuscleTypes(muscleTypes.reduce((acc, muscleType) => ({ ...acc, [muscleType]: true }), {}))
+            }
+          }  }
           handleChange={handleChange}
           muscleTypes={muscleTypes}
-          chosenMuscleTypes={chosenMuscleTypes} />
-        <Workout
+          chosenMuscleTypes={chosenMuscleTypes}
+          isChosenAll={
+            chosenAll
+          } />
+        
+      </div>
+      <div className="container"> 
+      <Workout
           exercises={exercises.filter(exercise => chosenMuscleTypes[exercise.muscle])}
           toggleInstructions={toggleInstructions}
           chosenExercise={chosenExercise}
