@@ -1,3 +1,5 @@
+
+
 :root {
   --brown: #62554a;
   --cream: #dabfac;
@@ -7,7 +9,7 @@
 body {
   margin: 0;
   font-family: 'Noto Sans Tagbanwa', sans-serif;
-  color: var(--dark-brown)
+  color: var(--dark-brown);
 }
 
 h1 {
@@ -27,6 +29,7 @@ h2 {
   background-color: var(--cream);
   width: 80%;
   margin: auto;
+  border-radius: 5px;
 }
 
 .checkboxes {
