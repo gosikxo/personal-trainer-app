@@ -1,0 +1,49 @@
+@import "theme";
+
+.parameters {
+    background-color: $cream;
+    width: 80%;
+    margin: auto;
+    border-radius: 5px;
+  
+    &__title {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    &__select-all {
+      width: 100px;
+      font-size: 15px;
+    }
+  
+    &__checkboxes {
+      margin: 0 50px;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 20px;
+    }
+  
+    &__checkboxes label {
+      text-align: right;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+  
+    &__checkboxes input {
+      margin-right: 7px;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+  
+    &__checkbox {
+      width: 20%;
+    }
+  }
+  
+  @media only screen and (max-width: 1100px) {
+    .parameters__checkbox {
+      width: 50%;
+    }
+  }

@@ -1,0 +1,36 @@
+@import "parameters";
+@import "theme";
+@import "typography";
+
+body {
+  margin: 0;
+}
+
+* {
+  font-family: $body-font;
+  color: $dark-brown;
+}
+
+
+.workout {
+  background-color: $cream;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.workout ol {
+  font-size: 20px;
+}
+
+.instructions {
+  display: none;
+}
+
+.visibleInstructions {
+  display: block;
+}
+
+.exercise {
+  cursor: pointer;
+}
