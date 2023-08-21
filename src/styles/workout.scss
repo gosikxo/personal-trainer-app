@@ -1,0 +1,25 @@
+@import "theme";
+
+.workout {
+  background-color: $cream;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 20px;
+
+  &__list {
+    font-size: 20px;
+  }
+
+  &__item {
+    cursor: pointer;
+    padding: 0 2rem;
+  }
+
+  &__item-instructions {
+    display: none;
+  }
+
+  &__item-instructions--visible {
+    display: block;
+  }
+}

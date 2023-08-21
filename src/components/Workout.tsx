@@ -1,16 +1,37 @@
-import React from 'react'
-import { Excercise } from '../types'
+import React from "react"
+import { Excercise } from "../types"
 
-const Workout = ({ exercises, toggleInstructions, chosenExercise, clicked }:
-  { exercises: Array<Excercise>, toggleInstructions: (name: string) => void, chosenExercise: string, clicked: boolean }) => {
+const Workout = ({
+  exercises,
+  toggleInstructions,
+  chosenExercise,
+  clicked,
+}: {
+  exercises: Array<Excercise>
+  toggleInstructions: (name: string) => void
+  chosenExercise: string
+  clicked: boolean
+}) => {
   return (
-    <div className='workout'>
-      <h2>Workout</h2>
-      <ol>
+    <div className="workout">
+      <h2 className="workout__title">Workout</h2>
+      <ol className="workout__list">
         {exercises.map((exercise: Excercise) => (
-          <li onClick={() => toggleInstructions(exercise.name)} className='exercise'>
-            {exercise.name} ({exercise.muscle})
-            <p className={(chosenExercise === exercise.name && clicked) ? "visibleInstructions" : "instructions"}>{exercise.instructions}</p>
+          <li
+            onClick={() => toggleInstructions(exercise.name)}
+            className="workout__item"
+          >
+            <span className="workout__item-name">{exercise.name}</span> (
+            <span className="workout__item-muscle">{exercise.muscle}</span>)
+            <p
+              className={
+                chosenExercise === exercise.name && clicked
+                  ? "workout__item-instructions--visible"
+                  : "workout__item-instructions"
+              }
+            >
+              {exercise.instructions}
+            </p>
           </li>
         ))}
       </ol>
