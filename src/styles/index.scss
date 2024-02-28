@@ -11,3 +11,8 @@ body {
   font-family: $body-font;
   color: $dark-brown;
 }
+
+.big-container {
+  display: flex;
+  flex-direction: row;
+}
