@@ -60,38 +60,36 @@ function App() {
   return (
     <div className="App">
       <h1>Meet your new personal trainer.</h1>
-      <div className="big-container">
-        <div className="container">
-          <Parameters
-            toggleAll={() => {
-              if (chosenAll) {
-                setChosenMuscleTypes({})
-              } else {
-                setChosenMuscleTypes(
-                  muscleTypes.reduce(
-                    (acc, muscleType) => ({ ...acc, [muscleType]: true }),
-                    {}
-                  )
+      <div className="container">
+        <Parameters
+          toggleAll={() => {
+            if (chosenAll) {
+              setChosenMuscleTypes({})
+            } else {
+              setChosenMuscleTypes(
+                muscleTypes.reduce(
+                  (acc, muscleType) => ({ ...acc, [muscleType]: true }),
+                  {}
                 )
-                setChosenExercise("")
-              }
-            }}
-            handleChange={handleChange}
-            muscleTypes={muscleTypes}
-            chosenMuscleTypes={chosenMuscleTypes}
-            isChosenAll={chosenAll}
-          />
-        </div>
-        <div className="container">
-          <Workout
-            exercises={exercises.filter(
-              (exercise) => chosenMuscleTypes[exercise.muscle]
-            )}
-            toggleInstructions={toggleInstructions}
-            chosenExercise={chosenExercise}
-            clicked={clicked}
-          />
-        </div>
+              )
+              setChosenExercise("")
+            }
+          }}
+          handleChange={handleChange}
+          muscleTypes={muscleTypes}
+          chosenMuscleTypes={chosenMuscleTypes}
+          isChosenAll={chosenAll}
+        />
+      </div>
+      <div className="container">
+        <Workout
+          exercises={exercises.filter(
+            (exercise) => chosenMuscleTypes[exercise.muscle]
+          )}
+          toggleInstructions={toggleInstructions}
+          chosenExercise={chosenExercise}
+          clicked={clicked}
+        />
       </div>
     </div>
   )
