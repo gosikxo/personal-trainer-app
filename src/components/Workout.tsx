@@ -12,7 +12,7 @@ const Workout = ({
   chosenExercise: string
   clicked: boolean
 }) => {
-  return (
+  return exercises.length > 0 ? (
     <div className="workout">
       <h2 className="workout__title">Workout</h2>
       <ol className="workout__list">
@@ -36,7 +36,7 @@ const Workout = ({
         ))}
       </ol>
     </div>
-  )
+  ) : null
 }
 
 export default Workout
