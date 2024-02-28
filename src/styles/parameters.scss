@@ -1,10 +1,10 @@
 @import "theme";
 
 .parameters {
-  background-color: $cream;
   width: 50%;
   margin: auto;
   border-radius: 0.5rem;
+  border: 1px solid $dark-brown;
 
   &__title {
     display: flex;
@@ -15,8 +15,8 @@
 
   &__select-all {
     width: auto;
+    background-color: #fff;
     font-size: 1rem;
-    background-color: $cream;
     cursor: pointer;
     border: none;
   }
