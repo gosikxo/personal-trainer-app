@@ -5,6 +5,7 @@ import { Excercise } from "./types"
 import { useEffect } from "react"
 import uniq from "lodash/uniq"
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 function App() {
   const [exercises, setExercises] = useState<Array<Excercise>>([])
@@ -93,6 +94,7 @@ function App() {
           clicked={clicked}
         />
       </div>
+      <Footer />
     </div>
   )
 }
