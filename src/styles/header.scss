@@ -1,0 +1,16 @@
+@import "theme";
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: $dark-brown;
+  height: 60px;
+  align-items: center;
+
+  &__item {
+    color: $cream;
+    text-decoration: none;
+    font-size: 1.25rem;
+    margin: 0 1rem;
+  }
+}

@@ -4,6 +4,7 @@ import Workout from "./components/Workout"
 import { Excercise } from "./types"
 import { useEffect } from "react"
 import uniq from "lodash/uniq"
+import Header from "./components/Header"
 
 function App() {
   const [exercises, setExercises] = useState<Array<Excercise>>([])
@@ -59,7 +60,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Meet your new personal trainer.</h1>
+      <Header />
+      <h1>Meet your new personal trainer 🏋🏼‍♀️</h1>
       <div className="container">
         <Parameters
           toggleAll={() => {
