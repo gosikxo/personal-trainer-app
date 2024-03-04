@@ -1,16 +1,30 @@
 @import "theme";
 
-.header {
+.footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: $dark-brown;
-  height: 60px;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
 
-  &__item {
+  h3 {
     color: $cream;
-    text-decoration: none;
+    font-size: 1rem;
+    margin: 0 1.5rem;
+  }
+
+  &__items {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0 1.5rem;
+  }
+
+  &__items > * {
     font-size: 1.25rem;
-    margin: 0 1rem;
+    cursor: pointer;
+    fill: $cream;
   }
 }
