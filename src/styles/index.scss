@@ -13,3 +13,8 @@ body {
   font-family: $body-font;
   color: $dark-brown;
 }
+
+.App {
+  position: relative;
+  min-height: 100vh;
+}
